@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './css/index.css';
-import App from './App';
+import './index.css';
+import TopicDiagram from './topic_diagram/topicDiagram';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TopicDiagram />
   </React.StrictMode>,
   document.getElementById('root')
 );
