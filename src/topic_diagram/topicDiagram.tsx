@@ -1,20 +1,23 @@
 import './css/topicDiagram.css';
-import { Topic } from './types/Topic';
+import {Topic} from './types/Topic';
 import depthToColor from './colorHandler';
-import { addTopic } from './addTopic';
-
-const topics: Topic[] = [];
+import {addTopic} from './addTopic';
+import { useState } from "react";
 
 
 
 const TopicDiagram = () => {
+    const [topics, setTopics] = useState([] as Topic[]);
     return (
-        <div className='all-topics' >
-            <div onClick={() => { topics.push(addTopic('example', 1)) }}>
+        <div className='all-topics'>
+            <div onClick={() => {
+                topics.push(addTopic('example', 1));
+                console.log(topics)
+            }}>
                 add a topic
             </div>
             {topicDivs(topics)}
-        </div >
+        </div>
     )
 }
 // recursively convert topics to divs
@@ -37,5 +40,6 @@ const topicDivs = (topics: Topic[] | undefined) => {
         )
     });
 }
+
 
 export default TopicDiagram;
