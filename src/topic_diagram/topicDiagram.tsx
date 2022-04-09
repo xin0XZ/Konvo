@@ -24,9 +24,20 @@ const topicDivs = (topics: Topic[] | undefined, setTopics: (value: (((prevState:
     return topics.map((topic, index) => {
         return (
             <div className='topic'>
-                <div className='text'>
-                    {topic.text}
-                </div>
+                <input type='text' onChange={(change) => {
+
+                    let newTopicsArray = [...topics];
+
+                    newTopicsArray[index] = {
+                        ...newTopicsArray[index],
+                        text: change.target.value
+                    }
+
+                    setTopics(newTopicsArray)
+
+                }} value={topic.text} className='text'>
+
+                </input>
                 <div className='time'>
                     {topic.timestamp.toDateString()}
                 </div>
