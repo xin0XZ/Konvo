@@ -5,7 +5,8 @@ import {addTopic} from './addTopic';
 import { SetStateAction, useState} from "react";
 
 const TopicDiagram = () => {
-    const [topics, setTopics] = useState([] as Topic[]);
+    const [topics, setTopics] = useState<Topic[]>([]);
+
     return (
         <div className='all-topics'>
             <div onClick={() => {
